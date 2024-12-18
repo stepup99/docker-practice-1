@@ -1,0 +1,13 @@
+version: "3.0"
+services:
+  web-app:
+    image: nginx
+    command: "env"
+    env_file:
+      - app.env
+    environment:
+      - name=value
+      - app.name=product-service
+      - service.url=google.com
+      - input=${INPUT:-10}
+
