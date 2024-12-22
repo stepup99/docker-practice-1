@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  mock:
+    image: mockserver/mockserver
+    ports:
+      - "1080:1080"
+    environment:
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/init.json
+    volumes:
+      # - "./data/01-init.json:/config/init.json"
+      - "./data/02-init.json:/config/init.json"
+
+
+
+# curl localhost:1080/say/hello
+# curl localhost:1080/some/path
+
+# curl -v localhost:1080/some/path
